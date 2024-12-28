@@ -1,0 +1,150 @@
+/* Main container for the slider */
+.sliderbody {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center;    /* Centers content vertically */
+  overflow: hidden;
+  perspective: 1000px;
+  height: 100vh;          /* Full viewport height */
+  margin: 0 auto;         /* Center the entire body horizontally */
+  padding: 0;             /* Remove unnecessary padding */
+}
+.sliderTitle {
+  text-align: center;
+  margin-top: 10%;
+}
+.sliderTitle h1{
+  font-size: 3em;
+  color: #fff;
+}
+.sliderTitle h5{
+  font-size: 1.2em;
+  color: #fff;
+}
+#ground {
+  width: 90vw; /* Responsive width */
+  height: 90vw; /* Responsive height */
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(90deg);
+  background: radial-gradient(
+    center center,
+    farthest-side,
+    rgba(165, 155, 155, 0.2),
+    transparent
+  );
+}
+
+/* Drag container for 3D effects */
+#drag-container {
+  position: relative;
+  width: 80%;            /* Adjusted for responsiveness */
+  height: 80%;           /* Adjusted for responsiveness */
+  transform-style: preserve-3d;
+  display: flex;         /* To help manage child centering */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Spin container for rotation */
+#spin-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: spin 30s linear infinite; /* Add rotation animation */
+}
+
+/* Images and videos in the slider */
+#drag-container img,
+#drag-container video {
+  position: absolute;
+  top: 15%;              /* Center vertically */
+  left: 50%;             /* Center horizontally */
+  transform: translate(-50%, -50%) preserve-3d; /* Center and keep 3D */
+  width: 10vw;          /* Responsive width */
+  height: 15vw;         /* Responsive height */
+  box-shadow: 0 0 8px #fff;
+  cursor: pointer;
+}
+
+img:hover {
+  transform: scale(1.2); /* Zoom effect */
+  transition: transform 0.3s ease; /* Smooth effect */
+}
+
+/* Spin animation */
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Reverse spin animation (if needed) */
+@keyframes spinRevert {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+.content-display {
+  width: 90%; /* More flexible width */
+  max-width: 400px; /* Limits width for larger screens */
+  padding: 20px;
+  background: #c1c1c1;
+  color: #1b1b1b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 18%;
+  margin-right: 15%;
+  border-left: 2px solid #dbd6d6; /* Divider between slider and content */
+  border-radius: 20px;
+}
+
+.content-box {
+  text-align: left;
+
+}
+
+.content-box h3 {
+  margin-bottom: 20%;
+  color: rgb(14, 16, 35);
+}
+
+.content-box p {
+  font-size: 1rem; /* Relative font size for responsiveness */
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #drag-container {
+    width: 90%; /* Adjust for smaller screens */
+    height: 90%;
+  }
+
+  #drag-container img,
+  #drag-container video {
+    width: 15vw; /* Smaller size for mobile */
+    height: 20vw;
+  }
+
+  .content-display {
+    width: 100%; /* Full width for mobile */
+    max-width: none;
+    border-left: none; /* Remove divider */
+    margin-top: 20px; /* Add spacing for mobile layout */
+  }
+}

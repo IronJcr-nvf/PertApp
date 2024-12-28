@@ -1,0 +1,19 @@
+.services{
+    height:100vh;
+    padding:50px;
+    margin-top:3%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.services-title{
+    font-size: 3rem;
+    letter-spacing: 1px;
+}
+
+.services-description{
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color:beige;
+}

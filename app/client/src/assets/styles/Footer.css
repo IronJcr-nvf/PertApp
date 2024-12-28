@@ -1,0 +1,57 @@
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Wrapper to ensure footer stays at the bottom */
+.footerBody {
+    background:linear-gradient(to right, #252DA0FF,rgb(83, 81, 192));
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    border-top-right-radius: 63%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    overflow: hidden;
+    padding :80px;
+}
+
+.footerBody .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footerBody a {
+    color: #ffa500;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+.footerBody a:hover {
+    color: #ffffff;
+}
+
+/* Text alignment for responsiveness */
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .footerBody .row {
+        flex-direction: column;
+        text-align: center;
+    }
+    .text-left, .text-right {
+        text-align: center;
+    }
+}

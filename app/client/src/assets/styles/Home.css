@@ -1,0 +1,33 @@
+.home-container {
+  min-height:380vh; 
+  position: relative;
+  background: radial-gradient(
+    122.96% 50% at 50% 50%,
+    rgba(79, 95, 147, 0.99) 10.67%,
+    rgba(54, 57, 132, 0.99) 35%,
+    rgba(39, 37, 51, 0.99) 54.17%,
+    rgba(28, 28, 49, 0.99) 100%
+  );
+  margin: 0 auto; /* تمركز العنصر أفقياً */
+  overflow: hidden; /* لمنع التمرير الزائد */
+  margin: 0 auto; /* مركزي */
+  color: white;
+  padding:0px;
+  margin:0px;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+.image-intro{
+  width: 60%;
+  height: 60%;
+  margin-left:20%;
+  
+}
+.home-hr{
+  width: 50%;
+  margin-left:25%;
+}
+

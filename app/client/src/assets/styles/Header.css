@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff; /* Default light mode background */
+  color: #000; /* Default light mode text color */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #fdfdfd; /* Dark background */
+  color: #e8ebef; /* Light text color */
+}
+.language-btn, .theme-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: inherit;
+  margin: 0 10px;
+}
+
+.language-btn:hover, .theme-btn:hover {
+  color: #c0c69b;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 1px 1px 70px rgb(101, 103, 105);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it's on top */
+}
+
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.logo-image{
+  width: 50px;
+  height: 50px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+  margin-left:20%;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+  font-weight: 700;
+}
+
+.nav-links li a:hover {
+  color: #9edfec;
+}
+
+/* Buttons container */
+.nav .buttons {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.login-btn,
+.sign-up-btn,
+.theme-btn {
+  padding: 2px 15px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+  font-weight: 700;
+
+}
+
+.login-btn {
+  background-color: white;
+  color: #0f0f0f;
+  border-radius: 10px;
+}
+
+.login-btn:hover {
+  background-color: #4f666a;
+}
+
+.sign-up-btn {
+  background-color: #1f3551;
+  color: #e8ebef;
+  border-radius: 10px;
+}
+
+.sign-up-btn:hover {
+  background-color: #009edc;
+}
+
+.theme-btn {
+  font-size: 1.5rem; /* Increase icon size */
+  color: #e8ebef;
+  background-color: transparent;
+}
+
+
+
+/* Responsive Design */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #1A1B32FF;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .buttons {
+    width: 100%;
+    justify-content: space-between;
+    display:block;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sign-up-btn,
+  .login-btn,
+  .theme-btn {
+    width: 48%;
+  }
+}
+
+
+/* Modal Backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-end; /* Start from right */
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal */
+.modal {
+  background: white;
+  width:65%;
+  height: 100%;
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%); /* Start off-screen */
+  animation: slide-in 0.5s forwards;
+  border-radius: 10px;
+  text-align: center;
+  color:black;
+}
+
+/* Close Button */
+.close-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.close-btn:hover {
+  background-color: #e84118;
+}
+
+/* Slide-in Animation */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
